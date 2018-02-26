@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@color/blue"
+    android:paddingTop="10dp"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="6"
+android:gravity="center_vertical"
+        android:layout_height="25dp"
+        android:background="@color/edit_color"
+        android:drawableBottom="@color/edit_color"
+        android:drawableLeft="@mipmap/zfb_02_02_07"
+        android:drawablePadding="0dp"
+        android:drawableRight="@mipmap/zfb_02_02_09"
+        android:hint="阿里体育"
+
+        android:ems="10"
+        android:textColorHint="@color/white"
+android:textSize="13sp"
+        android:drawableTop="@color/edit_color" />
+    <ImageView
+        android:layout_width="20dp"
+
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="23dp"
+        android:background="@mipmap/zfb_02_04"
+        />
+    <ImageView
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/zfb_02_06"
+        />
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.administrator.mytestrecyclerviewapplication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MyRecyclerView= (RecyclerView) findViewById(R.id.MyRecyclerView);
+
         MyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         MyRecyclerView.setItemAnimator(new DefaultItemAnimator());
        getData();
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(MainActivity.this,"点击的是第"+position+"个",Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(MainActivity.this,HomeActivity.class));
 
             }
 
@@ -68,23 +71,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
    public void getData(){
-       new Thread(new Runnable() {
-           @Override
-           public void run() {
-               Request request = new Request.Builder().url(URL_).build();
-               Call call = M_OK_HTTP_CLIENT.newCall(request);
-               try {
-                   Response response = call.execute();
-                   if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
-                   Log.d(TAG,response.body().toString());
-
-
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
-       }
-       ).start();
+//       new Thread(new Runnable() {
+//           @Override
+//           public void run() {
+//               Request request = new Request.Builder().url(URL_).build();
+//               Call call = M_OK_HTTP_CLIENT.newCall(request);
+//               try {
+//                   Response response = call.execute();
+//                   if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+//                   Log.d(TAG,response.body().toString());
+//
+//
+//               } catch (IOException e) {
+//                   e.printStackTrace();
+//               }
+//           }
+//       }
+//       ).start();
 
 
 
